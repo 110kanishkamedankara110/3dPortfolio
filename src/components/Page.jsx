@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Top from "./top";
+import Top from "./Top";
 import TopRocket from "./TopRocket";
 import Cloud from "../models/Cloud";
 import Text from "./Text";
