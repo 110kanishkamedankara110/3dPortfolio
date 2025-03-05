@@ -1,7 +1,7 @@
 import { Float } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { useRef, useEffect } from "react";
-import Laptop from "../models/laptop";
+import Laptop from "../models/Laptop";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
