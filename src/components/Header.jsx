@@ -37,9 +37,13 @@ const Header = (props) => {
         duration: 0.5,
       },
       0
-    ).to(svgRef.current, {
-      scale: 1,
-    },0.2);
+    ).to(
+      svgRef.current,
+      {
+        scale: 1,
+      },
+      0.2
+    );
 
     props.onHomeCLick();
 
@@ -53,12 +57,21 @@ const Header = (props) => {
       <div className="w-full flex justify-center">
         <div
           ref={home}
-          className="p-3 bg-white rounded-full cursor-pointer"
+          className="p-3rounded-full cursor-pointer"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onClick={handleClick}
+          style={{
+            backdropFilter: "blur(20px)",
+            backgroundColor: "rgba(0,0,0,0.4)",
+            padding:10,
+            borderRadius:10,
+            fontSize:20,
+            color:'white'
+          }}
         >
-          <svg
+          _Home
+          {/* <svg
             ref={svgRef}
             baseProfile="tiny"
             height="24px"
@@ -74,7 +87,7 @@ const Header = (props) => {
               ref={pathRef}
               d="M12,3c0,0-6.186,5.34-9.643,8.232C2.154,11.416,2,11.684,2,12c0,0.553,0.447,1,1,1h2v7c0,0.553,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.447,1-1v-7h2c0.553,0,1-0.447,1-1c0-0.316-0.154-0.584-0.383-0.768C18.184,8.34,12,3,12,3z"
             />
-          </svg>
+          </svg> */}
         </div>
       </div>
     </nav>

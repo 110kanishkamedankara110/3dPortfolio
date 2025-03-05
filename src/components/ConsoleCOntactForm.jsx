@@ -20,13 +20,13 @@ const ConsoleContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen  text-green-400 flex justify-center items-center">
-      <div style={{backgroundColor:'rgb(21 25 25)'}} className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 p-8 border border-green-500 rounded-lg">
+    <div className="min-h-screen  text-green-400 flex justify-center items-center m-5">
+      <div style={{backgroundColor:' rgba(0,0,0,0.4)',backdropFilter: "blur(20px)",}} className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 p-8 borde rounded-lg">
         <div className="space-y-4" >
           <div className="mb-4">
-            <h2 className="text-lg text-green-400">~/contact-me</h2>
-            <p className="text-sm text-green-300">
-              # Enter your details to send a message
+            <h2 className="text-lg text-green-400">~/contact-me</h2><br/>
+            <p className="text-sm text-gray-400">
+              // Enter your details to send a message
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -43,7 +43,7 @@ const ConsoleContactForm = () => {
                 id="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full bg-gray-800 text-green-400 p-2 border-b-2 border-green-500 focus:outline-none focus:ring-0"
+                className="w-full bg-gray-800 text-[#66d1a2] p-2 border-b-2 border-[#66d1a2] focus:outline-none focus:ring-0"
                 placeholder="Enter your name"
                 required
               />
@@ -61,7 +61,7 @@ const ConsoleContactForm = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-gray-800 text-green-400 p-2 border-b-2 border-green-500 focus:outline-none focus:ring-0"
+                className="w-full bg-gray-800 text-[#66d1a2] p-2 border-b-2 border-[#66d1a2] focus:outline-none focus:ring-0"
                 placeholder="Enter your email"
                 required
               />
@@ -79,7 +79,7 @@ const ConsoleContactForm = () => {
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-gray-800 text-green-400 p-2 border-b-2 border-green-500 focus:outline-none focus:ring-0"
+                className="w-full bg-gray-800 text-[#66d1a2] p-2 border-b-2 border-[#66d1a2] focus:outline-none focus:ring-0"
                 placeholder="Type your message here..."
                 required
               />
@@ -87,7 +87,7 @@ const ConsoleContactForm = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="px-4 py-2 bg-gray-800 text-green-400 border border-green-500 rounded hover:bg-green-500 hover:text-gray-900 transition duration-200"
+                className="px-4 py-2 bg-gray-800 text-green-400 border border-[#66d1a2] rounded hover:bg-green-500 hover:text-gray-900 transition duration-200"
               >
                 _Send
               </button>
@@ -96,7 +96,7 @@ const ConsoleContactForm = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <div className="w-full h-full bg-gray-800 border border-green-500 flex items-center justify-center">
+          <div className="w-full h-full bg-gray-800 border border-[#66d1a2] flex items-center justify-center">
             
               <Canvas
                 style={{
@@ -105,7 +105,7 @@ const ConsoleContactForm = () => {
                   zIndex: 0,
                 }}
                 gl={{ antialias: false }}
-                className="flex justify-start absolute h-full w-full h-full"
+                className="flex justify-start absolute  w-full h-full"
                 position={[0, 0, 0]}
               >
                 <directionalLight position={[1, 1, 1]} intensity={2} />

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanishka Medankara | Software Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Animation Keyframes */
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans leading-normal tracking-normal">
+
+    <!-- Header Section -->
+    <header class="flex justify-between items-center p-5 bg-gray-800 shadow-lg">
+        <h1 class="text-2xl font-bold">S.D. Kanishka Medankara</h1>
+        <nav>
+            <a href="#skills" class="mx-2 text-gray-300 hover:text-white">Skills</a>
+            <a href="#projects" class="mx-2 text-gray-300 hover:text-white">Projects</a>
+            <a href="#experience" class="mx-2 text-gray-300 hover:text-white">Experience</a>
+            <a href="#contact" class="mx-2 text-gray-300 hover:text-white">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center justify-center h-screen bg-cover bg-center text-center" 
+        style="background-image: url('https://source.unsplash.com/random/1920x1080'); animation: fadeIn 2s ease-in;">
+        <div>
+            <h2 class="text-4xl font-bold mb-4">Full-Stack Developer & Problem Solver</h2>
+            <p class="text-lg mb-8">Dedicated to delivering innovative software solutions in Java, Python, and JavaScript.</p>
+            <a href="#contact" class="bg-blue-500 px-4 py-2 rounded-lg text-white hover:bg-blue-600">
+                Let's Connect
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800 text-center">
+        <h3 class="text-3xl font-semibold mb-6">Skills</h3>
+        <p class="mb-8 max-w-3xl mx-auto">
+            With a foundation in both frontend and backend technologies, my skills span across programming languages, web and mobile development, and genetic algorithms. 
+            Below are a few areas where I excel:
+        </p>
+        <div class="flex flex-wrap justify-center">
+            <div class="m-4 p-4 w-1/3 sm:w-1/4 bg-gray-700 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h4 class="text-xl font-bold">Java</h4>
+                <p>Backend Development, Algorithms</p>
+            </div>
+            <div class="m-4 p-4 w-1/3 sm:w-1/4 bg-gray-700 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h4 class="text-xl font-bold">Python</h4>
+                <p>Data Analysis, Machine Learning</p>
+            </div>
+            <div class="m-4 p-4 w-1/3 sm:w-1/4 bg-gray-700 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h4 class="text-xl font-bold">JavaScript</h4>
+                <p>Frontend Development, Node.js</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900 text-center">
+        <h3 class="text-3xl font-semibold mb-6">Projects</h3>
+        <p class="mb-8 max-w-3xl mx-auto">
+            Below are some of my recent projects that demonstrate my versatility and dedication to crafting solutions across different domains.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-10">
+            <div class="bg-gray-800 p-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h4 class="text-xl font-bold mb-2">Student Management System</h4>
+                <p>Java, MySQL - A comprehensive system for managing and reporting student data.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h4 class="text-xl font-bold mb-2">NFT Generator</h4>
+                <p>Java - Generates unique digital assets with custom algorithms and design rules.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h4 class="text-xl font-bold mb-2">Video Streaming Application</h4>
+                <p>Java EE, JSP, Hibernate - Efficient web app for video streaming with chunked uploads.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-800 text-center">
+        <h3 class="text-3xl font-semibold mb-6">Experience</h3>
+        <p class="mb-8 max-w-3xl mx-auto">
+            My professional experience includes roles that have allowed me to tackle challenging projects and grow both technically and as a leader.
+        </p>
+        <div class="space-y-6 px-10 max-w-4xl mx-auto">
+            <div class="bg-gray-700 p-6 rounded-lg" style="animation: slideIn 1s ease;">
+                <h4 class="text-2xl font-bold">Associate Software Engineer - Exon Software Solutions</h4>
+                <p>Working on diverse backend and frontend projects, including real-time video streaming applications.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg" style="animation: slideIn 1s ease;">
+                <h4 class="text-2xl font-bold">Co-Founder - DynamicBiz</h4>
+                <p>Led traffic management and ecosystem simulation projects, applying genetic algorithms to create intelligent solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-center">
+        <h3 class="text-3xl font-semibold mb-6">Contact</h3>
+        <p class="mb-4 max-w-xl mx-auto">
+            I’m always open to discussing new projects or collaboration opportunities. Reach out via email, phone, or connect with me on social media!
+        </p>
+        <p class="mb-4">Email: <a href="mailto:110kqnishkamedankara110@gmail.com" class="text-blue-400">110kqnishkamedankara110@gmail.com</a></p>
+        <p class="mb-4">Phone: +94705715007</p>
+        <div class="mt-6">
+            <a href="https://github.com/110kanishkamedankara110" class="text-gray-300 hover:text-white mx-2">GitHub</a>
+            <a href="https://linkedin.com/in/kanishka-medankara-770762181" class="text-gray-300 hover:text-white mx-2">LinkedIn</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth section fade-in on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

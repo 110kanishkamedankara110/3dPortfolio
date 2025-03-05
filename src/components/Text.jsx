@@ -3,9 +3,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { color } from "three/webgpu";
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedText = forwardRef(({ text, canvas }) => {
+const AnimatedText = forwardRef(({ text, canvas },ref) => {
     const textRef = useRef();
   
     useFrame(() => {
@@ -40,7 +41,7 @@ const AnimatedText = forwardRef(({ text, canvas }) => {
     }, [canvas]);
   
     return (
-      <Text ref={textRef} fontSize={3}>
+      <Text ref={textRef} color={"#D91656"} fontSize={3}>
         {text}
       </Text>
     );

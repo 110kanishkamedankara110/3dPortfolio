@@ -11,13 +11,18 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "@react-three/drei": "^9.114.0",
-    "@react-three/fiber": "^8.17.8",
+    "@react-three/cannon": "^6.6.0",
+    "@react-three/drei": "^9.115.0",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/rapier": "^1.5.0",
     "gsap": "^3.12.5",
     "leva": "^0.9.35",
     "lodash": "^4.17.21",
+    "matter-js": "^0.20.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-interactive-blob": "^0.0.1",
+    "react-spring": "^9.7.4",
     "three": "^0.169.0"
   },
   "devDependencies": {

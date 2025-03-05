@@ -89,7 +89,7 @@ const Rocket = (props) => {
   return (
     <group
       ref={rocket}
-      rotation={[0, Math.PI, (7 * Math.PI) / 4]}
+      rotation={[0, Math.PI, ((7 * Math.PI) / 4)+0.3]}
       scale={[2, 2, 2]}
       {...props}
       dispose={null}

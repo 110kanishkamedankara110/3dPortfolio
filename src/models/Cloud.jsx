@@ -3,57 +3,76 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
 import gsap from "gsap";
-import cloud from "../assets/cloud-texture.png";
+import cloud1 from "../assets/cloud-texture.png";
+import cloud2 from "../assets/cloud-texture2.png";
+import cloud3 from "../assets/cloud-texture3.png";
+import cloud4 from "../assets/cloud-texture4.png";
+import cloud5 from "../assets/cloud-texture5.png";
+
+
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { get } from "lodash";
+
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 
 function C(props) {
 
+  const texture = [
+    useLoader(TextureLoader, cloud1),
+    useLoader(TextureLoader, cloud2),
+    useLoader(TextureLoader, cloud3),
+    useLoader(TextureLoader, cloud4),
+    useLoader(TextureLoader, cloud5),
+  ];
+  
 
   const { camera, size, viewport, setSize } = useThree();
 
   const handleResize = () => {
     setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix(); 
-  }
+    camera.updateProjectionMatrix();
+  };
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
-
+  }, [camera, setSize]);
 
   const cloudRef = useRef();
-  const texture = useLoader(TextureLoader, cloud);
-  function getRandomNumber(mi, ma) {
-    const min = mi;
-    const max = ma;
-    return Math.random() * (max - min) + min;
-  }
-
-
-
+  const mbm = useRef();
+  const speed=getRandomNumber(0,0.04);
+ 
   useFrame(() => {
-    cloudRef.current.position.y += 0.02;
-    cloudRef.current.position.x -= 0.02;
+    cloudRef.current.position.y +=speed;
+    cloudRef.current.position.x -= speed+0.01;
 
     if (cloudRef.current.position.y > viewport.height / 2) {
       cloudRef.current.position.y = -viewport.height / 2;
+
     }
 
     if (cloudRef.current.position.x < -viewport.width / 2) {
       cloudRef.current.position.x = viewport.width / 2;
+
     }
   });
 
-
-
+const scale=getRandomNumber(4, 10);
   return (
-    <group scale={[4, 4, 4]}>
+    <group
+      scale={[
+        scale,
+        scale,
+        scale,
+      ]}
+    >
       <group>
         <mesh
           position={[
@@ -65,15 +84,13 @@ function C(props) {
           ref={cloudRef}
         >
           <planeGeometry />
-          <meshBasicMaterial  map={texture}
-           
-            transparent
-          />
+          <meshBasicMaterial ref={mbm} map={texture[Math.floor(getRandomNumber(0, texture.length))]} transparent />
         </mesh>
       </group>
     </group>
   );
 }
+
 
 const Cloud = (props) => {
   gsap.registerPlugin(ScrollTrigger);
@@ -140,7 +157,7 @@ const Cloud = (props) => {
         left: 0,
         width: "100vw",
         zIndex: 50,
-        pointerEvents: "none"
+        pointerEvents: "none",
       }}
       ref={can}
       gl={{ antialias: false }}
@@ -153,8 +170,9 @@ const Cloud = (props) => {
       <hemisphereLight groundColor="#000000" color="#FFFFFF" intensity={1} />
 
       <group ref={cloud}>
-        {Array.from({ length: 100 }, (_, index) => (
+        {Array.from({ length: 150 }, (_, index) => (
           <C key={index} index={index + 1} />
+          
         ))}
       </group>
     </Canvas>
