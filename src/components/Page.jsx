@@ -233,27 +233,27 @@ const Page = forwardRef((props, ref) => {
           ref={projects}
           style={{}}
         >
-          <img width={200} src="/public/ai.png" />
-          <img width={200} src="/public/css.png" />
-          <img width={200} src="/public/dev.png" />
-          <img width={200} src="/public/do.png" />
-          <img width={200} src="/public/Fsdev.png" />
-          <img width={200} src="/public/git.png" />
+          <img width={200} src="/ai.png" />
+          <img width={200} src="/css.png" />
+          <img width={200} src="/dev.png" />
+          <img width={200} src="/do.png" />
+          <img width={200} src="/Fsdev.png" />
+          <img width={200} src="/git.png" />
 
-          <img width={200} src="/public/html.png" />
-          <img width={200} src="/public/int.png" />
-          <img width={200} src="/public/java.png" />
-          <img width={200} src="/public/node.png" />
-          <img width={200} src="/public/php.png" />
-          <img width={200} src="/public/py.png" />
-          <img width={200} src="/public/term.png" />
-          <img width={200} src="/public/vs.png" />
-          <img width={200} src="/public/arduno.png" />
-          <img width={200} src="/public/bs.png" />
-          <img width={200} src="/public/fb.png" />
-          <img width={200} src="/public/js.png" />
-          <img width={200} src="/public/npm.png" />
-          <img width={200} src="/public/react.png" />
+          <img width={200} src="/html.png" />
+          <img width={200} src="/int.png" />
+          <img width={200} src="/java.png" />
+          <img width={200} src="/node.png" />
+          <img width={200} src="/php.png" />
+          <img width={200} src="/py.png" />
+          <img width={200} src="/term.png" />
+          <img width={200} src="/vs.png" />
+          <img width={200} src="/arduno.png" />
+          <img width={200} src="/bs.png" />
+          <img width={200} src="/fb.png" />
+          <img width={200} src="/js.png" />
+          <img width={200} src="/npm.png" />
+          <img width={200} src="/react.png" />
 
         </div>
       </section>
