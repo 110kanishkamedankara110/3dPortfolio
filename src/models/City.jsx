@@ -1,6 +1,6 @@
 
 import { useGLTF } from '@react-three/drei'
-import city from "../assets/3D/city.glb";
+import city from "/3D/city.glb";
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';

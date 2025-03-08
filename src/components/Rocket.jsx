@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import rocket2 from "../assets/3D/rocket_bomb.glb";
+import rocket2 from "/3D/rocket_bomb.glb";
 import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

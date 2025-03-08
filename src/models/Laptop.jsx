@@ -8,7 +8,7 @@ Title: Laptop
 
 import React, { useEffect, useRef } from "react";
 import {  useGLTF } from "@react-three/drei";
-import laptop from "../assets/3D/laptop.glb";
+import laptop from "/3D/laptop.glb";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useThree } from "@react-three/fiber";

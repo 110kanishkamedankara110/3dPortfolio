@@ -9,7 +9,7 @@ Title: Curious skeleton
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import skeleton from '../assets/3D/curious_skeleton.glb'
+import skeleton from '/3D/curious_skeleton.glb'
 const Skeleton = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(skeleton);

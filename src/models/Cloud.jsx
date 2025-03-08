@@ -3,11 +3,11 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
 import gsap from "gsap";
-import cloud1 from "../assets/cloud-texture.png";
-import cloud2 from "../assets/cloud-texture2.png";
-import cloud3 from "../assets/cloud-texture3.png";
-import cloud4 from "../assets/cloud-texture4.png";
-import cloud5 from "../assets/cloud-texture5.png";
+import cloud1 from "/cloud-texture.png";
+import cloud2 from "/cloud-texture2.png";
+import cloud3 from "/cloud-texture3.png";
+import cloud4 from "/cloud-texture4.png";
+import cloud5 from "/cloud-texture5.png";
 
 
 import { useGSAP } from "@gsap/react";

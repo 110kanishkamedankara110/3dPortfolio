@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import island from "../assets/3D/free_low_poly_game_assets.glb";
+import island from "/3D/free_low_poly_game_assets.glb";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 const Island = (props) => {
