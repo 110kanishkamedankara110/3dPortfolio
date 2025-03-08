@@ -32,14 +32,20 @@ body{
 
 ::-webkit-scrollbar-track {
   background: #f1f1f100;
+  width: 8px;
+
 }
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
   background: #00a2ff;
+  width: 8px;
+
 }
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
   background: #4ee5eb;
+  width: 8px;
+
 }

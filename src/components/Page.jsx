@@ -110,7 +110,7 @@ const Page = forwardRef((props, ref) => {
         className="w-screen p-5 box-border flex justify-center items-center"
         style={{
           minHeight: "100vh",
-          maxHeight:'fit-content'
+          maxHeight: "fit-content",
         }}
       >
         <div
@@ -225,7 +225,7 @@ const Page = forwardRef((props, ref) => {
       </section>
 
       <section
-        style={{ transform: "translateX(-100%)",height:'fit-content' }}
+        style={{ transform: "translateX(-100%)", height: "fit-content" }}
         className="sec p-5 box-border flex flex-col "
       >
         <div
@@ -239,6 +239,8 @@ const Page = forwardRef((props, ref) => {
           <img width={200} src="/do.png" />
           <img width={200} src="/Fsdev.png" />
           <img width={200} src="/git.png" />
+          <img width={200} src="/ju.png" />
+          <img width={200} src="/and.png" />
 
           <img width={200} src="/html.png" />
           <img width={200} src="/int.png" />
@@ -251,11 +253,83 @@ const Page = forwardRef((props, ref) => {
           <img width={200} src="/arduno.png" />
           <img width={200} src="/bs.png" />
           <img width={200} src="/fb.png" />
-          <img width={200} src="/js.png" />
           <img width={200} src="/npm.png" />
           <img width={200} src="/react.png" />
-
+          <img width={200} src="/js.png" />
         </div>
+      </section>
+      <section
+        style={{ height: "fit-content" }}
+        className="box-border flex flex-col mt-28"
+      >
+        <div
+          className="h-20 mb-2"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.6)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+          }}
+        ></div>
+
+        <div
+          style={{
+            backgroundColor: "rgba(0,0,0,0.6)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "8px",
+            padding: "20px",
+            width: "100%",
+            textAlign: "center",
+            alignContent: "center",
+            justifyItems: "center",
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+              gap: "20px",
+              alignContent: "center",
+              justifyItems: "center",
+            }}
+          >
+              <img
+                src="https://github-readme-stats.vercel.app/api?username=110kanishkamedankara110&theme=dark&hide_border=false&include_all_commits=true&count_private=true"
+                alt="GitHub Stats"
+                style={{ maxWidth: "100%", borderRadius: "8px" }}
+              />
+              <img
+                src="https://github-readme-streak-stats.herokuapp.com/?user=110kanishkamedankara110&theme=dark&hide_border=false"
+                alt="GitHub Streak"
+                style={{ maxWidth: "100%", borderRadius: "8px" }}
+              />
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=110kanishkamedankara110&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
+                alt="Top Languages"
+                style={{ maxWidth: "100%", borderRadius: "8px" }}
+              />
+          </div>
+
+     
+            <img
+              src="https://raw.githubusercontent.com/110kanishkamedankara110/110kanishkamedankara110/output/github-contribution-grid-snake.svg"
+              alt="GitHub Contribution Snake"
+              style={{ borderRadius: "8px" }}
+            />
+            <img
+              src="https://github-contributor-stats.vercel.app/api?username=110kanishkamedankara110&limit=5&theme=dracula&combine_all_yearly_contributions=true"
+              alt="Top Contributed Repo"
+              style={{ maxWidth: "100%", borderRadius: "8px", marginTop: 50 }}
+            />
+        </div>
+
+        <div
+          className="h-20 mt-2"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.6)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+          }}
+        ></div>
       </section>
 
       <section
