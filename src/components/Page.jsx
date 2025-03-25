@@ -26,10 +26,31 @@ const Page = forwardRef((props, ref) => {
   const projects = useRef();
   const rocketSection = useRef();
   const endSection = useRef();
+  const marqueeRef = useRef(null);
+  const marqueeRef2 = useRef(null);
 
   const contentRef = useRef(null);
   const textRef = useRef(null);
   const mushRoomRef = useRef(null);
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+
+    gsap.to(marquee, {
+      xPercent: -50, // Moves the text by 50% (halfway) to create an infinite loop
+      duration: 20, // Adjust speed
+      ease: "linear",
+      repeat: -1, // Infinite loop
+    });
+    
+    const marquee2 = marqueeRef2.current;
+
+    gsap.to(marquee2, {
+      xPercent: -50, // Moves the text by 50% (halfway) to create an infinite loop
+      duration: 20, // Adjust speed
+      ease: "linear",
+      repeat: -1, // Infinite loop
+    });
+  }, []);
 
   useEffect(() => {
     const children = pages.current.children;
@@ -97,6 +118,33 @@ const Page = forwardRef((props, ref) => {
     getHome: () => homeSection.current,
     getProject: () => projects.current,
   }));
+
+  const items = [
+    "JAVA",
+    "HTML",
+    "CSS",
+    "JAVASCRIPT",
+    "NODE",
+    "JUPYTERNOTEBOOK",
+    "INTELIJ",
+    "PHP",
+    "PYTHON",
+    "BOOTSTRAP",
+    "TAILWIND",
+    "NPM",
+    "ARDUINO",
+    "THREEJS",
+    "REACT",
+    "REACTNATIVE",
+    "FIREBASE",
+    "TERMINAL",
+    "AI",
+    "DOCKER",
+    "CI/CD",
+    "GIT",
+    "VSCODE",
+    "ANDROID"
+  ];
 
   return (
     <div
@@ -262,15 +310,22 @@ const Page = forwardRef((props, ref) => {
         style={{ height: "fit-content" }}
         className="box-border flex flex-col mt-28"
       >
-        <div
-          className="h-20 mb-2"
+         <div
+          className="h-14 text-white flex items-center overflow-hidden whitespace-nowrap relative"
           style={{
             backgroundColor: "rgba(0,0,0,0.6)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
           }}
-        ></div>
-
+        >
+          <div ref={marqueeRef2} className="flex gap-4">
+            {[...items, ...items].map((item, index) => (
+              <span key={index} className="mx-1">
+                {index !== items.length * 2 - 1 && "•"} {item}
+              </span>
+            ))}
+          </div>
+        </div>
         <div
           style={{
             backgroundColor: "rgba(0,0,0,0.6)",
@@ -292,44 +347,51 @@ const Page = forwardRef((props, ref) => {
               justifyItems: "center",
             }}
           >
-              <img
-                src="https://github-readme-stats.vercel.app/api?username=110kanishkamedankara110&theme=dark&hide_border=false&include_all_commits=true&count_private=true"
-                alt="GitHub Stats"
-                style={{ maxWidth: "100%", borderRadius: "8px" }}
-              />
-              <img
-                src="https://github-readme-streak-stats.herokuapp.com/?user=110kanishkamedankara110&theme=dark&hide_border=false"
-                alt="GitHub Streak"
-                style={{ maxWidth: "100%", borderRadius: "8px" }}
-              />
-              <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=110kanishkamedankara110&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
-                alt="Top Languages"
-                style={{ maxWidth: "100%", borderRadius: "8px" }}
-              />
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=110kanishkamedankara110&theme=dark&hide_border=false&include_all_commits=true&count_private=true"
+              alt="GitHub Stats"
+              style={{ maxWidth: "100%", borderRadius: "8px" }}
+            />
+            <img
+              src="https://github-readme-streak-stats.herokuapp.com/?user=110kanishkamedankara110&theme=dark&hide_border=false"
+              alt="GitHub Streak"
+              style={{ maxWidth: "100%", borderRadius: "8px" }}
+            />
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=110kanishkamedankara110&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
+              alt="Top Languages"
+              style={{ maxWidth: "100%", borderRadius: "8px" }}
+            />
           </div>
 
-     
-            <img
-              src="https://raw.githubusercontent.com/110kanishkamedankara110/110kanishkamedankara110/output/github-contribution-grid-snake.svg"
-              alt="GitHub Contribution Snake"
-              style={{ borderRadius: "8px" }}
-            />
-            <img
-              src="https://github-contributor-stats.vercel.app/api?username=110kanishkamedankara110&limit=5&theme=dracula&combine_all_yearly_contributions=true"
-              alt="Top Contributed Repo"
-              style={{ maxWidth: "100%", borderRadius: "8px", marginTop: 50 }}
-            />
+          <img
+            src="https://raw.githubusercontent.com/110kanishkamedankara110/110kanishkamedankara110/output/github-contribution-grid-snake.svg"
+            alt="GitHub Contribution Snake"
+            style={{ borderRadius: "8px" }}
+          />
+          <img
+            src="https://github-contributor-stats.vercel.app/api?username=110kanishkamedankara110&limit=5&theme=dracula&combine_all_yearly_contributions=true"
+            alt="Top Contributed Repo"
+            style={{ maxWidth: "100%", borderRadius: "8px", marginTop: 50 }}
+          />
         </div>
 
         <div
-          className="h-20 mt-2"
+          className=" h-14 text-white flex items-center overflow-hidden whitespace-nowrap relative"
           style={{
             backgroundColor: "rgba(0,0,0,0.6)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
           }}
-        ></div>
+        >
+          <div ref={marqueeRef} className="flex gap-4">
+            {[...items, ...items].map((item, index) => (
+              <span key={index} className="mx-1">
+                {index !== items.length * 2 - 1 && "•"} {item}
+              </span>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section
