@@ -4,6 +4,7 @@ import React, {
   useImperativeHandle,
   useRef,
   useLayoutEffect,
+  useState,
 } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -41,7 +42,7 @@ const Page = forwardRef((props, ref) => {
       ease: "linear",
       repeat: -1, // Infinite loop
     });
-    
+
     const marquee2 = marqueeRef2.current;
 
     gsap.to(marquee2, {
@@ -143,8 +144,89 @@ const Page = forwardRef((props, ref) => {
     "CI/CD",
     "GIT",
     "VSCODE",
-    "ANDROID"
+    "ANDROID",
   ];
+
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
+  const pro = [
+    {
+      title: "Project 1",
+      description: "A cool project",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 2",
+      description: "Awesome project",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 3",
+      description: "Another one",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 1",
+      description: "A cool project",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 2",
+      description: "Awesome project",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 3",
+      description: "Another one",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 1",
+      description: "A cool project",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 2",
+      description: "Awesome project",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+      title: "Project 3",
+      description: "Another one",
+      thumbnail:
+        "https://contessa-project.eu/wp-content/uploads/2022/05/placeholder.gif",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+  ];
+
+  const handleMouseEnter = (project) => {
+    setHoveredProject(project);
+  };
+
+  const handleMouseMove = (e) => {
+    setCursorPos({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredProject(null);
+  };
 
   return (
     <div
@@ -306,11 +388,74 @@ const Page = forwardRef((props, ref) => {
           <img width={200} src="/js.png" />
         </div>
       </section>
+
+      <section className="flex flex-col gap-10 justify-center p-5 items-center mt-10">
+        <h1
+          style={{
+            backgroundColor: "rgba(0,0,0,0.6)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+          }}
+          className="w-full text-center p-6 rounded-lg text-white text-5xl "
+        >
+          Projects
+        </h1>
+
+        <div className="relative p-5 flex justify-center">
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {pro.map((pro, index) => (
+              <div
+                key={index}
+                className="rounded-lg overflow-hidden bg-gray-800 shadow-lg transition-transform duration-300 hover:scale-105"
+                onMouseEnter={() => handleMouseEnter(pro)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
+                {/* Thumbnail Image */}
+                <div className="relative aspect-video bg-black">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={pro.thumbnail}
+                    alt={pro.title}
+                  />
+                </div>
+                {/* Project Details */}
+                <div className="p-4 text-white">
+                  <h2 className="text-lg font-bold">{pro.title}</h2>
+                  <p className="text-gray-400">{pro.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Floating Video Preview */}
+          {hoveredProject && (
+            <div
+              className="fixed z-50 w-64 h-36 pointer-events-none"
+              style={{
+                top: `${cursorPos.y + 20}px`,
+                left: `${cursorPos.x + 20}px`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <video
+                className="w-full h-full rounded-lg shadow-lg"
+                src={hoveredProject.video}
+                autoPlay
+                muted
+                loop
+              />
+            </div>
+          )}
+        </div>
+      </section>
+
       <section
         style={{ height: "fit-content" }}
         className="box-border flex flex-col mt-28"
       >
-         <div
+        <div
           className="h-14 text-white flex items-center overflow-hidden whitespace-nowrap relative"
           style={{
             backgroundColor: "rgba(0,0,0,0.6)",
